@@ -1,9 +1,23 @@
+# EXECUTAR COMO ROOT
+CREATE USER 'DBA'@'%' IDENTIFIED BY 'dba.123';
+
 CREATE USER 'DBA'@'localhost' IDENTIFIED BY 'dba.123';
 
-GRANT ALL PRIVILEGES ON *.* TO 'DBA'@'localhost';
+GRANT ALL ON *.* TO 'DBA'@'%';
 
-CREATE USER 'analisa'@'localhost' IDENTIFIED BY 'analisa.123';
+GRANT GRANT OPTION ON *.* TO 'DBA'@'%';
 
-CREATE USER 'usuario1'@'localhost' IDENTIFIED BY 'usuario1.123';
+GRANT ALL ON *.* TO 'DBA'@'localhost';
 
-CREATE USER 'usuario2'@'localhost' IDENTIFIED BY 'usuario2.123';
+GRANT GRANT OPTION ON *.* TO 'DBA'@'localhost';
+
+# EXECUTAR COMO DBA
+CREATE USER 'analista'@'%' IDENTIFIED BY 'analista.123';
+
+GRANT ALL ON enderecodb.* TO 'analista'@'%';
+
+GRANT ALL ON rhdb.* TO 'analista'@'%';
+
+CREATE USER 'usuario1'@'%' IDENTIFIED BY 'usuario1.123';
+
+CREATE USER 'usuario2'@'%' IDENTIFIED BY 'usuario2.123';
