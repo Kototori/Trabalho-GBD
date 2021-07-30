@@ -105,24 +105,26 @@ CREATE TABLE rhdb.historico_carreira(
 
 CREATE TABLE rhdb.historico_exclusao_pessoa_fisica(
    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   id_pessoa int NOT NULL,
-   nome VARCHAR(255) NOT NULL,
-   id_endereco INT NOT NULL,
-   id_situacao_funcional INT NOT NULL,
-   id_cargo INT NOT NULL,
-   id_cor_raca INT NOT NULL,
-   id_escolaridade INT NOT NULL,
+   id_pessoa_fisica int NOT NULL,
+   nome VARCHAR(255),
+   cpf VARCHAR(11),
+   telefone VARCHAR(10),
+   celular VARCHAR(11),
+   id_endereco INT,
+   id_situacao_funcional INT,
+   id_cargo INT,
+   id_cor_raca INT,
    data_exclusao DATE NOT NULL
 );
 
 CREATE TABLE rhdb.historico_exclusao_pessoa_juridica(
    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
    id_pessoa_juridica int NOT NULL,
-   nome_fantasia VARCHAR(100) NOT NULL,
-   data_fundacao DATE NOT NULL,
-   cnpj VARCHAR(14) NOT NULL,
-   url_site VARCHAR(255) NOT NULL,
-   id_endereco INT NOT NULL,
+   nome_fantasia VARCHAR(255),
+   data_fundacao DATE,
+   cnpj VARCHAR(14),
+   url_site VARCHAR(255),
+   id_endereco INT,
    data_exclusao DATE NOT NULL
 );
 
