@@ -6283,3 +6283,66 @@ INSERT INTO enderecodb.endereco (logradouro, numero, complemento, bairro_id) VAL
 INSERT INTO enderecodb.endereco (logradouro, numero, complemento, bairro_id) VALUES('Rua Felicio Alcure', 29, 'Depois', 578);
 INSERT INTO enderecodb.endereco (logradouro, numero, complemento, bairro_id) VALUES('Rua Felicio Alcure', 20, 'Depois', 579);
 
+#RHDB.CARGO
+insert into rhdb.cargo(cargo) values
+('Administrador'),
+('Auxiliar administrativo'),
+('Recepcionista'),
+('Vendedor'),
+('Serviços gerais'),
+('Segurança'),
+('Gerente'),
+('Analista'),
+('Desenvolvedor'),
+('Almoxarife');
+
+#RHDB.ESCOLARIDADE
+insert into rhdb.escolaridade(escolaridade, percentual_acrecimo) values
+('Não informado', 0), 
+('Curso técnico', 5),
+('Graduação', 10),
+('Pós graduação', 15),
+('Mestrado', 40),
+('Doutorado', 60),
+('Pós doc', 80);
+
+#RHDB.COR_RACA 
+insert into rhdb.cor_raca (cor_raca) values
+('Branco'),
+('Negro'),
+('Pardo');
+
+#RHDB.SITUACAO_FUNCIONAL
+insert into rhdb.situacao_funcional(situacao_funcional) values
+('Ativos'),
+('Inativo'),
+('Aposentado'),
+('Férias'),
+('falecido');
+
+#RHDB.SETOR_EMPRESA
+insert into rhdb.setor_empresa(setor_empresa, id_pessoa_juridica, id_endereco) values
+("Diretoria", 1, 1),
+("Almoxarifado", 2, 2),
+("Desenvolvimento", 3, 3);
+
+#RHDB.SALARIO_BASE
+insert in rhdb.salario_base(salario, data_reajuste) values
+(2000, NOW() );
+
+#RHDB.PESSOA_FISICA
+insert into rhdb.pessoa_fisica (nome, cpf, telefone, celular, id_endereco, id_situacao_funcional, id_cargo, id_cor_raca) values
+('Alberto Matos', '12345678912', '9999999999', '99999999999', 1, 1, 1, 1),
+('Bruna Nilsen', '14345678912', '9991999999', '99299999999', 2, 1, 2, 2),
+('Carlos Orfeu', '12343678912', '9912999999', '99999945999', 3, 1, 3, 3),
+('Diane Paliatti', '12346578912', '9923999999', '95299999999', 4, 1, 4, 1),
+('Efrain Qall', '12345678562', '9999976999', '99978999999', 5, 1, 5, 2);
+
+#RHDB.PESSOA_JURIDICA
+insert into rhdb.pessoa_juridica (nome_fantasia, cnpj, url_site, data_fundacao, id_endereco) values
+('Fabiana Rover', '22245611178912', 'fabirover.ru', NOW(), 6),
+('Gaspar Santos', '13456771111712', 'gasparsantos.ru', NOW(), 7),
+('Honda Oes', '12343678111191', 'hondaoes.ru', NOW(), 8),
+('Ismair Colion', '12346571111891', 'ismaircolion.ru', NOW(), 9),
+('Jasmin Protter', '12345671111156', 'jasminprotter.ru', NOW(), 10);
+
