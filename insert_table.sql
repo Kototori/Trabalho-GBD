@@ -6320,16 +6320,6 @@ insert into rhdb.situacao_funcional(situacao_funcional) values
 ('Férias'),
 ('falecido');
 
-#RHDB.SETOR_EMPRESA
-insert into rhdb.setor_empresa(setor_empresa, id_pessoa_juridica, id_endereco) values
-("Diretoria", 1, 1),
-("Almoxarifado", 2, 2),
-("Desenvolvimento", 3, 3);
-
-#RHDB.SALARIO_BASE
-insert in rhdb.salario_base(salario, data_reajuste) values
-(2000, NOW() );
-
 #RHDB.PESSOA_FISICA
 insert into rhdb.pessoa_fisica (nome, cpf, telefone, celular, id_endereco, id_situacao_funcional, id_cargo, id_cor_raca) values
 ('Alberto Matos', '12345678912', '9999999999', '99999999999', 1, 1, 1, 1),
@@ -6345,4 +6335,14 @@ insert into rhdb.pessoa_juridica (nome_fantasia, cnpj, url_site, data_fundacao, 
 ('Honda Oes', '12343678111191', 'hondaoes.ru', NOW(), 8),
 ('Ismair Colion', '12346571111891', 'ismaircolion.ru', NOW(), 9),
 ('Jasmin Protter', '12345671111156', 'jasminprotter.ru', NOW(), 10);
+
+#RHDB.SETOR_EMPRESA
+insert into rhdb.setor_empresa(setor_empresa, id_pessoa_juridica, id_endereco) values
+("Diretoria", 1, 1),
+("Almoxarifado", 2, 2),
+("Desenvolvimento", 3, 3);
+
+#RHDB.SALARIO_BASE
+insert into rhdb.salario_base(salario, data_reajuste) values
+(2000.00, NOW() );
 
