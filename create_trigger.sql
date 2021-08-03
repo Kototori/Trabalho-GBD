@@ -18,3 +18,15 @@ BEGIN
 END$$    
 
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER rhdb.trg_criptografar_numero BEFORE 
+INSERT
+ON 
+rhdb.pessoa_fisica FOR EACH ROW
+begin
+	SET new.telefone = aes_encrypt(new.telefone, 'trabalhogdb');	
+	SET new.celular = aes_encrypt(new.celular, 'trabalhogdb');	
+end$$
+DELIMITER ;
+
