@@ -70,7 +70,9 @@ CREATE TABLE rhdb.pessoa_fisica(
    CONSTRAINT FK_PF_Endereco FOREIGN KEY (id_endereco) REFERENCES enderecodb.endereco(id),
    CONSTRAINT FK_PF_SituacaoFuncional FOREIGN KEY (id_situacao_funcional) REFERENCES rhdb.situacao_funcional(id),
    CONSTRAINT FK_PF_Cargo FOREIGN KEY (id_cargo) REFERENCES rhdb.cargo(id),
-   CONSTRAINT FK_PF_CorRaca FOREIGN KEY (id_cor_raca) REFERENCES rhdb.cor_raca(id)
+   CONSTRAINT FK_PF_CorRaca FOREIGN KEY (id_cor_raca) REFERENCES rhdb.cor_raca(id),
+   UNIQUE KEY (nome),
+   UNIQUE KEY (cpf)
 );
 
 CREATE TABLE rhdb.pessoa_juridica(
@@ -114,7 +116,7 @@ CREATE TABLE rhdb.historico_exclusao_pessoa_fisica(
    id_situacao_funcional INT,
    id_cargo INT,
    id_cor_raca INT,
-   data_exclusao DATE NOT NULL
+   data_exclusao DATETIME NOT NULL
 );
 
 CREATE TABLE rhdb.historico_exclusao_pessoa_juridica(
@@ -125,11 +127,18 @@ CREATE TABLE rhdb.historico_exclusao_pessoa_juridica(
    cnpj VARCHAR(14),
    url_site VARCHAR(255),
    id_endereco INT,
-   data_exclusao DATE NOT NULL
+   data_exclusao DATETIME NOT NULL
 );
 
 CREATE TABLE rhdb.salario_base(
    id int AUTO_INCREMENT PRIMARY KEY,
    salario DOUBLE(16,2) NOT NULL,
-   data_reajuste DATE NOT NULL
+   data_reajuste DATETIME NOT NULL
+);
+
+CREATE TABLE rhdb.setor_empresa_pessoas(
+    id_setor_empresa int,
+    id_pessoa_fisica int,
+    CONSTRAINT FK_SEP_Setor_Empresa FOREIGN KEY (id_setor_empresa) REFERENCES rhdb.setor_empresa(id),
+    CONSTRAINT FK_SE_Pessoa_Fisica FOREIGN KEY (id_pessoa_fisica) REFERENCES rhdb.pessoa_fisica(id)
 );
