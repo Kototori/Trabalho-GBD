@@ -30,3 +30,16 @@ begin
 end$$
 DELIMITER ;
 
+DELIMITER $$
+CREATE TRIGGER rhdb.trg_reajusta_salario AFTER 
+UPDATE ON rhdb.salario_base FOR EACH ROW
+BEGIN 
+	UPDATE 	rhdb.historico_carreira hc 
+	   SET	hc.salario_atual = (SELECT new.salario * (SELECT (e.percentual_acrecimo / 100) + 1
+														FROM rhdb.escolaridade e
+                                                       WHERE e.id = hc.id_escolaridade)
+								  FROM rhdb.salario_base sb)
+	 WHERE hc.data_fim IS NULL;
+
+END$$
+DELIMITER ;
