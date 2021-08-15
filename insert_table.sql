@@ -3,18 +3,18 @@
 #ENDERECODB.PAIS
 INSERT INTO enderecodb.pais (id,nome)
 VALUES
-('Brasil'),
-('Argentina'),
-('Chile'),
-('Paraguai'),
-('Uruguai'),
-('Equador'),
-('Venezuela'),
-('Colombia'),
-('Peru'),
-('Bolovia'),
-('Suriname'),
-('Guiana');
+(1,'Brasil'),
+(2,'Argentina'),
+(3,'Chile'),
+(4,'Paraguai'),
+(5,'Uruguai'),
+(6,'Equador'),
+(7,'Venezuela'),
+(8,'Colombia'),
+(9,'Peru'),
+(10,'Bolovia'),
+(11,'Suriname'),
+(12,'Guiana');
 
 #ENDERECODB.UNIDADE_FEDERATIVA
 INSERT INTO enderecodb.unidade_federativa (id, nome, sigla, pais_id) VALUE
