@@ -1,5 +1,9 @@
-CREATE VIEW rhdb.vw_pessoa_fisica_contato as 
-select pf.nome as Nome,
-AES_DECRYPT(pf.celular, 'trabalhogdb') as Celular,
-AES_DECRYPT(pf.telefone, 'trabalhogdb') as Telefone
-from rhdb.pessoa_fisica pf 
+CREATE VIEW rhdb.vw_pessoa_fisica_contato AS
+SELECT pf.nome AS Nome,
+    CAST(
+        AES_DECRYPT(pf.celular, 'trabalhogdb') AS CHAR(50)
+    ) AS Celular,
+    CAST(
+        AES_DECRYPT(pf.telefone, 'trabalhogdb') AS CHAR(50)
+    ) AS Telefone
+FROM rhdb.pessoa_fisica pf;
