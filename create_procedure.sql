@@ -32,4 +32,3 @@ BEGIN
 		id_escolaridade);
     
 END $$
-DELIMITER ;
