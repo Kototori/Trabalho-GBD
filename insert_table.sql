@@ -6346,3 +6346,9 @@ insert into rhdb.setor_empresa(setor_empresa, id_pessoa_juridica, id_endereco) v
 insert into rhdb.salario_base(salario, data_reajuste) values
 (2000.00, NOW() );
 
+ 	  
+INSERT INTO rhdb.setor_empresa_pessoas (id_setor_empresa, id_pessoa_fisica) VALUES
+(1, 1),
+(1, 2),
+(2, 3);
+
